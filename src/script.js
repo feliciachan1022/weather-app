@@ -24,7 +24,7 @@ let day = days[now.getDay()];
 dateElement.innerHTML = `${day} ${hours}:${minutes}`;
 
 function displayWeatherCondition(response) {
-  console.log(response.data);
+  let iconElement = document.querySelector("#icon");
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -39,10 +39,15 @@ function displayWeatherCondition(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {
-  let apiKey = "c6d1909a33fe18f92e3b87b9216a8f68";
+  let apiKey = "fbeb8afb095414b79997c5bebe6b9ea9";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeatherCondition);
