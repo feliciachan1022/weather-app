@@ -50,8 +50,17 @@ li {
 .overview {
   margin-bottom: 20px;
 }
-.weather-temperature img {
+.weather-icon img {
   margin-right: 5px;
   height: 64px;
   width: 64px;
+}
+
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }

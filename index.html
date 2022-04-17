@@ -62,7 +62,7 @@
               <li id="date">SUNDAY FEBRUARY 20TH</li>
               <li id="description"></li>
               <li>
-                <div class="clearfix weather-temperature">
+                <div class="clearfix weather-icon">
                   <img src="" alt="sunny-icon" id="icon" class="weather-icon" />
                 </div>
               </li>
@@ -72,9 +72,15 @@
           <br />
           <div class="row">
             <div class="col-6">
-              <span class="temperature" id="temperature"></span
-              ><span class="units">°C | <a href="#">°F</a></span>
+              <div class="weather-temperature">
+                <span class="temperature" id="temperature"></span
+                ><span class="units"
+                  ><a href="#" id="celsius-link" class="active">°C </a> |
+                  <a href="#" id="fahrenheit-link">°F</a></span
+                >
+              </div>
             </div>
+
             <div class="col-6">
               <ul>
                 <li>FEELS LIKE: <span id="feelsLike"></span>°C</li>
